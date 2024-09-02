@@ -1,0 +1,52 @@
+﻿@model Teacher
+
+@{
+    ViewData["Title"] = "Teacher";
+}
+
+<div class="row d-flex align-items-center justify-content-center">
+    <div class="col-md-3 card p-3">
+        <h2 class="text-center text-info">Add Teacher</h2>
+        <form asp-action="Teacher" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            
+
+            <div class="mb-1">
+                <label asp-for="Teacher_Name" class="control-label"></label>
+                <input asp-for="Teacher_Name" class="form-control" />
+                <span asp-validation-for="Teacher_Name" class="text-danger"></span>
+            </div>
+            
+            
+            <div class="mb-1">
+                <label asp-for="Date_of_joining" class="control-label"></label>
+                <input asp-for="Date_of_joining" class="form-control" />
+                <span asp-validation-for="Date_of_joining" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-1">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+
+            <div class="row mt-2 justify-content-center align-items-center">
+
+                <div class="col-4">
+                    <input type="submit" value="Add Teacher" class="btn btn-primary btn-sm float-end" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

@@ -1,0 +1,79 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div class="row d-flex align-items-center justify-content-center">
+    <div class="col-md-3 card p-3">
+        <h2 class="text-center text-info">Add Student</h2>
+        <form asp-action="Student" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+           
+            <div class="mb-1">
+                <label asp-for="Std_Name" class="control-label"></label>
+                <input asp-for="Std_Name" class="form-control" />
+                <span asp-validation-for="Std_Name" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Std_Gender" class="control-label"></label>
+                <select asp-for="Std_Gender" class="form-control">
+                    <option value="">-- Select Gender --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="others">Others</option>
+
+                </select>
+                <span asp-validation-for="Std_Gender" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Std_Age" class="control-label"></label>
+                <input asp-for="Std_Age" class="form-control" />
+                <span asp-validation-for="Std_Age" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Classes" class="control-label"></label>
+                <input asp-for="Classes" class="form-control" />
+                <span asp-validation-for="Classes" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Teachers" class="control-label"></label>
+                <input asp-for="Teachers" class="form-control" />
+                <span asp-validation-for="Teachers" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Terms" class="control-label"></label>
+                <input asp-for="Terms" class="form-control" />
+                <span asp-validation-for="Terms" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Grades" class="control-label"></label>
+                <input asp-for="Grades" class="form-control" />
+                <span asp-validation-for="Grades" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Subjects" class="control-label"></label>
+                <input asp-for="Subjects" class="form-control" />
+                <span asp-validation-for="Subjects" class="text-danger"></span>
+            </div>
+
+            <div class="row mt-2 justify-content-center align-items-center">
+
+                <div class="col-4">
+                    <input type="submit" value="Add Student" class="btn btn-primary btn-sm float-end" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

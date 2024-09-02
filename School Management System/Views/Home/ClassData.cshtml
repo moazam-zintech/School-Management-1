@@ -1,0 +1,40 @@
+﻿@model List<Class>
+
+@{
+    ViewData["Title"] = "Class Table";
+}
+
+<div class="row align-items-center justify-content-center">
+
+    <h1 class=" text-center text-info ">Classes Data</h1>
+</div>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Number</th>
+            <th>Student</th>
+            <th>Teacher</th>
+
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var classe in Model)
+        {
+            <tr>
+                <td>@classe.Class_id</td>
+                <td>@classe.Class_number</td>
+                <td>@classe.Students</td>
+                <td>@classe.Teachers</td>
+                <td><a class="btn btn-link" asp-controller="Home" asp-action="EditClass" asp-route-id="@classe.Class_id">Edit</a></td>
+                <td><a class="btn btn-link" asp-controller="Home" asp-action="DeleteClass" asp-route-id="@classe.Class_id" onclick="return confirm('Are you sure you want to delete this Class?');">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-controller="Home" asp-action="Class">Add Class</a>
+

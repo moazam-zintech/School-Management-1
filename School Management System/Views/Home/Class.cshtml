@@ -1,0 +1,50 @@
+﻿@model Class
+
+@{
+    ViewData["Title"] = "Classes";
+}
+
+<div class="row d-flex align-items-center justify-content-center">
+    <div class="col-md-3 card p-3">
+        <h2 class="text-center text-info">Add Classes</h2>
+
+        <form asp-action="Class" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+
+
+            <div class="mb-1">
+                <label asp-for="Class_number" class="control-label"></label>
+                <input asp-for="Class_number" class="form-control" />
+                <span asp-validation-for="Class_number" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Students" class="control-label"></label>
+                <input asp-for="Students" class="form-control" />
+                <span asp-validation-for="Students" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-1">
+                <label asp-for="Teachers" class="control-label"></label>
+                <input asp-for="Teachers" class="form-control" />
+                <span asp-validation-for="Teachers" class="text-danger"></span>
+            </div>
+
+            
+            <div class="row mt-2 justify-content-center align-items-center">
+
+                <div class="col-4">
+                    <input type="submit" value="Add Class" class="btn btn-primary btn-sm float-end" />
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
